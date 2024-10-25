@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-const uri = 'mongodb+srv://chayank:Amazing@cluster0.ex2o7.mongodb.net/ast_rules?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://<username>:<password>@cluster0.ex2o7.mongodb.net/<databaseName>?retryWrites=true&w=majority';
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
