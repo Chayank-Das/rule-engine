@@ -160,7 +160,6 @@ http-server -p 8080
 
  - Fetch and modify operators, operands, add or remove sub-expressions as needed.
  - Save changes to update the rule.
- - Combined Rules
 
 **Define a Combined Rule:**
 
@@ -174,6 +173,39 @@ http-server -p 8080
  - Enter JSON-formatted user data.
  - Enter the combined rule name to evaluate against.
  - Click Evaluate to determine eligibility.
+
+## **How To Modify Correctly**
+
+ - Example Rule: (age < 30 AND experience >= 3) OR (department = 'Marketing')
+ - AST Structure: 
+ ```bash
+          OR
+       /   \
+     AND     =
+    /  \    / \
+   <    >= department 'Marketing'
+  / \   / \
+age 30 experience 3
+```
+**To Modify Operators (AND, OR, ==, >, >=, <, <=)**
+- Fetch The Rule By Name
+- Click Modify Operator
+- To Change (age **<** 30 ....)
+- Navigation Will Be:
+   - Root Node **OR**
+   - Go Left To Reach **AND**
+   - Go Again Left To Reach **<**
+   - So The Navigation Will Be left.left Then Press **ENTER**
+   - Enter The New Operator Then Press **ENTER**
+ 
+  **To Modify Operands Value (age, 30, experience, 5, salary)**
+  - Follow The Same Rule
+  - By Looking Into The Tree
+  - For Example To Change (age < **30**)
+  - We Go left.left.right
+  - Enter Value
+  - Hit Enter To Change
+ 
 
 ### **API Endpoints**
 ### **Rules**
