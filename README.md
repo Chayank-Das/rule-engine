@@ -83,8 +83,8 @@ docker-compose up --build -d
 **Step 1: Clone the Repository**
 
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
-cd <repository-name>
+git clone https://github.com/Chayank-Das/rule-engine.git
+cd rule-engine
 ```
  
 **Step 2: Set Up the Backend**
