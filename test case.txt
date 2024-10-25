@@ -5,6 +5,7 @@ data: {
     "salary": 60000,
     "experience": 6
 }
+Output: Eligible
 
 
 2. rule: (age > 30) AND (salary > 50000)
@@ -14,6 +15,7 @@ data: {
     "salary": 55000,
     "experience": 4
 }
+Output: Eligible
 
 3. rule: (department = 'Sales') OR (salary > 70000)
 data: {
@@ -22,6 +24,7 @@ data: {
     "salary": 75000,
     "experience": 3
 }
+Output: Eligible
 
 4. rule: (age < 30 AND experience >= 3) OR (department = 'Marketing')
 data: {
@@ -30,6 +33,7 @@ data: {
     "salary": 50000,
     "experience": 2
 }
+Output: Eligible
 
 5. rule: ((age > 30 AND department = 'Sales') OR (age < 25 AND salary >= 30000)) AND (experience >= 2)
 data: {
@@ -38,6 +42,7 @@ data: {
     "salary": 32000,
     "experience": 3
 }
+Output: Eligible
 
 6. rule:(department = 'Engineering') AND (experience = 5)
 data: {
@@ -46,6 +51,7 @@ data: {
     "salary": 80000,
     "experience": 5
 }
+Output: Eligible
 
 7. rule: (age >= 40) AND (salary < 50000)
 data: {
@@ -54,7 +60,8 @@ data: {
     "salary": 55000,
     "experience": 10
 }
-false
+Output: Not Eligible
+
 
 8. rule: (age < 20) OR (experience > 10) OR (salary > 100000)
 data: {
@@ -63,5 +70,5 @@ data: {
     "salary": 90000,
     "experience": 12
 }
-
-rule: 
+Output: Eligible
+ 
