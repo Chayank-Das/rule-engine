@@ -1,0 +1,67 @@
+1. rule: (age >= 25) AND (experience >= 5)
+data: {
+    "age": 28,
+    "department": "Engineering",
+    "salary": 60000,
+    "experience": 6
+}
+
+
+2. rule: (age > 30) AND (salary > 50000)
+data: {
+    "age": 32,
+    "department": "Sales",
+    "salary": 55000,
+    "experience": 4
+}
+
+3. rule: (department = 'Sales') OR (salary > 70000)
+data: {
+    "age": 30,
+    "department": "Marketing",
+    "salary": 75000,
+    "experience": 3
+}
+
+4. rule: (age < 30 AND experience >= 3) OR (department = 'Marketing')
+data: {
+    "age": 25,
+    "department": "Marketing",
+    "salary": 50000,
+    "experience": 2
+}
+
+5. rule: ((age > 30 AND department = 'Sales') OR (age < 25 AND salary >= 30000)) AND (experience >= 2)
+data: {
+    "age": 22,
+    "department": "IT",
+    "salary": 32000,
+    "experience": 3
+}
+
+6. rule:(department = 'Engineering') AND (experience = 5)
+data: {
+    "age": 35,
+    "department": "Engineering",
+    "salary": 80000,
+    "experience": 5
+}
+
+7. rule: (age >= 40) AND (salary < 50000)
+data: {
+    "age": 35,
+    "department": "Finance",
+    "salary": 55000,
+    "experience": 10
+}
+false
+
+8. rule: (age < 20) OR (experience > 10) OR (salary > 100000)
+data: {
+    "age": 25,
+    "department": "Engineering",
+    "salary": 90000,
+    "experience": 12
+}
+
+rule: 

@@ -1,0 +1,142 @@
+<!-- frontend/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rule Engine with AST</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- <nav>
+        <div class="logo">Rule Engine</div>
+        <ul class="nav-links">
+            <li><a href="#single-rule-section">Single Rule</a></li>
+            <li><a href="#combined-rule-section">Combined Rule</a></li>
+        </ul>
+    </nav> -->
+
+    <header>
+        <h1>Rule Engine with AST</h1>
+        <p>Define, modify, and evaluate rules seamlessly.</p>
+    </header>
+
+    <div class="container">
+        <!-- Side by Side Sections -->
+        <div class="side-by-side">
+            <!-- Single Rule Section -->
+            <section id="single-rule-section">
+                <h2>Single Rule</h2>
+                <div class="input-group">
+                    <input type="text" id="ruleName" placeholder="Enter rule name">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="ruleInput" placeholder="Enter rule string">
+                    <button onclick="addRule()">Add Rule</button>
+                </div>
+
+                
+
+                <!-- Evaluate Single Rule -->
+                <h3>Evaluate User Data</h3>
+                <textarea id="userData" placeholder='Enter JSON user data'></textarea>
+                <div class="input-group">
+                    <input type="text" id="evaluateRuleName" placeholder="Enter rule name to evaluate">
+                    <button onclick="evaluateRuleByName()">Evaluate</button>
+                </div>
+                <h4 id="result"></h4>
+
+                <!-- Modify Single Rule -->
+                <h3>Modify Single Rule</h3>
+                <div class="input-group">
+                    <input type="text" id="modifyRuleName" placeholder="Enter rule name">
+                    <button onclick="fetchRule()">Fetch Rule</button>
+                </div>
+                <div id="modifyRuleDetails" style="display: none;">
+                    <h4>Rule Details</h4>
+                    <p id="ruleStringDisplay"></p>
+                    <p class="explanation">
+                        <strong>Note:</strong> Operators include <code>AND</code>, <code>OR</code>, <code>==</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>.<br>
+                        Operands are attributes or values like <code>age</code>, <code>30</code>, etc.
+                    </p>
+                    <div class="modify-actions">
+                        <button onclick="modifyOperator()">Modify Operator</button>
+                        <button onclick="modifyOperand()">Modify Operand Value</button>
+                        <button onclick="addSubExpression()">Add Sub-expression</button>
+                        <button onclick="removeSubExpression()">Remove Sub-expression</button>
+                        <button onclick="saveRule()">Save</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Combined Rule Section -->
+            <section id="combined-rule-section">
+                <h2>Combined Rule</h2>
+                <div class="input-group">
+                    <input type="text" id="combinedRuleName" placeholder="Enter combined rule name">
+                </div>
+                <div class="input-group">
+                    <textarea id="combinedRuleStrings" placeholder="Enter rule strings, one per line"></textarea>
+                </div>
+                <div class="input-group">
+                    <select id="combinedOperator">
+                        <option value="AND">AND</option>
+                        <option value="OR">OR</option>
+                    </select>
+                    <button onclick="addCombinedRule()">Add Combined Rule</button>
+                </div>
+
+                
+
+                <!-- Evaluate Combined Rule -->
+                <h3>Evaluate User Data</h3>
+                <textarea id="combinedUserData" placeholder='Enter JSON user data'></textarea>
+                <div class="input-group">
+                    <input type="text" id="evaluateCombinedRuleName" placeholder="Enter combined rule name to evaluate">
+                    <button onclick="evaluateCombinedRuleByName()">Evaluate</button>
+                </div>
+                <h4 id="combinedResult"></h4>
+
+                <!-- Modify Combined Rule -->
+                <h3>Modify Combined Rule</h3>
+                <div class="input-group">
+                    <input type="text" id="modifyCombinedRuleName" placeholder="Enter combined rule name">
+                    <button onclick="fetchCombinedRule()">Fetch Combined Rule</button>
+                </div>
+                <div id="modifyCombinedRuleDetails" style="display: none;">
+                    <h4>Combined Rule Details</h4>
+                    <p id="combinedRuleStringDisplay"></p>
+                    <p class="explanation">
+                        <strong>Note:</strong> Operators include <code>AND</code>, <code>OR</code>, <code>==</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>.<br>
+                        Operands are attributes or values like <code>age</code>, <code>30</code>, etc.
+                    </p>
+                    <div class="modify-actions">
+                        <button onclick="modifyCombinedOperator()">Modify Operator</button>
+                        <button onclick="modifyCombinedOperand()">Modify Operand Value</button>
+                        <button onclick="addCombinedSubExpression()">Add Sub-expression</button>
+                        <button onclick="removeCombinedSubExpression()">Remove Sub-expression</button>
+                        <button onclick="saveRule()">Save</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Error Message Display -->
+    <div id="errorMessage" class="error-message"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Rule Engine By Chayank Das</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsep@1.3.6/build/jsep.min.js"></script>
+
+</body>
+</html>
